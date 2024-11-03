@@ -15,16 +15,28 @@ function getComputerChoice () {
 console.log (getComputerChoice());
 
 function getHumanChoice() {
+    
     const input = prompt("Please enter rock, paper, or scissors:");
 
+    
+    if (input === null) {
+        console.log("Input canceled. Exiting.");
+        return; 
+    }
+
+    
     const choice = input.toLowerCase();
 
+    
     if (choice === "rock" || choice === "paper" || choice === "scissors") {
-        return choice; // Valid input
-    } else {
-        console.log("Invalid choice. Please enter rock, paper, or scissors."); // Log invalid input
-        return getHumanChoice(); // Re-run the function to ask again
+        return choice; 
     }
+
+   
+    else { 
+    console.log("Invalid choice. Please enter rock, paper, or scissors.");
+    return getHumanChoice();
+    } 
 }
 
 
